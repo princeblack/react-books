@@ -1,0 +1,113 @@
+
+.App{
+  text-align: left;
+  box-sizing: border-box;
+  .header{
+    top: 0;
+    // position: fixed;
+    display: flex;
+    // z-index: 11111111;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(29, 27, 27);
+    .top-header{
+      display: flex;
+      align-items: center;
+      img{
+        width: 80px;
+      }
+      .research, .research:focus{
+        margin-right: 5px;
+        margin-left: 5px;
+        min-height: 20px;
+        outline: none;
+        border: none;
+        border-radius: 0px;
+        cursor: text;
+      }
+      .submit,.submit:focus{
+        border-radius: 20px;
+        min-height: 20px;
+        outline: none;
+        background-color:rgba(233, 108, 108, 0.527) ;
+      }
+    }      
+    .header-link{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      a{
+        color: rgb(0, 0, 0);
+        font-family: 'Libre Baskerville', serif;
+        text-decoration: none;
+        border: solid rgb(170, 161, 161) 1px;
+        border-radius: 5px;
+        background-color:white;
+
+      }
+    }
+  }
+  .category{
+    display: flex;
+    flex-direction: column;
+    // margin-top: 97px;
+
+    .category-header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 100px;
+      background-color: rgb(207, 202, 207);
+      position: sticky;
+      top:100px;
+      p{
+        font-family: 'Caveat', cursive;
+        font-size: 22px;
+      }
+      img{
+        width: 80px;
+      }
+    }
+  }
+  .book{
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    box-shadow:  rgb(211, 206, 206) 0px 0px 20px 2px;
+    .left{
+      margin-right: 10px;
+      min-width: 100px;
+      max-width: 100px;
+      img{
+        width: 90px;
+      }
+      small{
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+      }
+    }
+    .right{
+      .title{
+        font-family: 'Playfair Display', serif;
+      }
+      .desc{
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 20px;
+      }
+      .actions{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        button{
+          border-radius: 5px;
+          border: 0;
+          background-color: rgb(235, 198, 235);
+          margin-right: 5px;
+        }
+      }
+    }
+
+  }
+}
