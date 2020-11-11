@@ -83,10 +83,14 @@
     padding: 20px;
     .left{
       margin-right: 10px;
-      min-width: 100px;
+      min-width: 210px;
       max-width: 100px;
       img{
         width: 90px;
+      }
+      .movieImage{
+        width: 210px;
+        height: 140px;
       }
       small{
         font-family: 'Playfair Display', serif;
@@ -115,5 +119,56 @@
       }
     }
 
+  }
+}
+
+
+@media (max-width: 370px){
+  .App{
+    .book{
+      flex-direction: column;
+      .left{
+        margin-right: 10px;
+        min-width: 150px;
+        max-width: 160px;        
+        img{
+          width: 90px;
+        }
+        .movieImage{
+          width: 100%;
+          height: 140px;
+          object-fit: cover;
+        }
+        small{
+          font-family: 'Playfair Display', serif;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 371px) and ( max-width: 500px ){
+  .App{
+    .book{
+      
+      .left{
+        margin-right: 10px;
+        min-width: 150px;
+        max-width: 160px;        
+        img{
+          width: 90px;
+        }
+        .movieImage{
+          width: 100%;
+          height: 140px;
+          object-fit: cover;
+        }
+        small{
+          font-family: 'Playfair Display', serif;
+          font-size: 20px;
+        }
+      }
+    }
   }
 }

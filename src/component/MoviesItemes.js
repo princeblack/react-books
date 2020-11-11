@@ -5,11 +5,12 @@ const MoviesItemes = (props) => {
     window.open(url, "_blank");
   };
   const data = props.data
+  console.log(data);
   return (
     <div className="book">
       <div className="left">
         <div className="img">
-          <img src={data.multimedia.src} alt={data.headline}></img>
+          <img className="movieImage" src={data.multimedia.src} alt={data.headline}></img>
         </div>
         <div className="publisher">
           <small>{data.display_title}</small>
