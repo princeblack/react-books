@@ -6,6 +6,8 @@ const Movie = (props) => {
   useEffect(() => {
     const date = new Date().toISOString().split("T")[0];
     const api_key = process.env.REACT_APP_API_KEY;
+    console.log(api_key );
+    console.log(process.env);
     const name = async () => {
       const url = `https://api.nytimes.com/svc/movies/v2/reviews/{type}.json/offset=${20}?api-key=${api_key}`;
       const response = await fetch(url);
