@@ -1,12 +1,13 @@
 import React from "react";
 import Book from './Book';
+import BookItems from './BookItems';
 
 class Category extends React.Component {
   render() {
     const { display_name, list_image, books } = this.props.data;
 
     const booksList = books.map(el => (
-        <Book data={el} key={el.book_uri}></Book>
+        <BookItems data={el} key={el.book_uri}></BookItems>
     ));
 
     return (

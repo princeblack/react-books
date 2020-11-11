@@ -1,49 +1,23 @@
-import React, {Component} from 'react';
+import React, { Component, State } from "react";
+import Category from "./Category";
 
-
-
-class Book extends Component{
-    handleClick = url => {
-        window.open(url, '_blank');
-    };
-    
-    render(){
-        const {
-            author,
-            book_image,
-            description,
-            title,
-            amazon_product_url,
-            publisher,
-            sunday_review_link
-          } = this.props.data;
-          return (
-            <div className="book">
-              <div className="left">
-                <div className="img">
-                  <img src={book_image} alt={title}></img>
-                </div>
-                <div className="publisher">
-                  <small>{publisher}</small>
-                </div>
-              </div>
-              <div className="right">
-                <p className="title">{title}</p>
-                <p className="author">{author}</p>
-                <p className="desc">{description}</p>
-                <div className="actions">
-                  <button onClick={() => this.handleClick(amazon_product_url)}>
-                    AMAZON
-                  </button>
-                  {sunday_review_link.length > 0 && (
-                    <button onClick={() => this.handleClick(sunday_review_link)}>
-                      REVIEW
-                    </button>
-                  )}
-                </div>
-              </div>
-            </div>
-          );
-    }
+class Book extends Component {
+  state = {
+    catagory: [],
+  };
+  async componentDidMount() {
+    const date = new Date().toISOString().split("T")[0];
+    const api_key = process.env.REACT_APP_API_KEY;
+    const url = `https://api.nytimes.com/svc/books/v3/lists/overview.json?published_date=${date}&api-key=${api_key}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({ catagory: data.results.lists });
+  }
+  render() {
+    const categoryItems = this.state.catagory.map((el) => {
+      return <Category data={el} key={el.list_id} />;
+    });
+    return <div>{categoryItems}</div>;
+  }
 }
 export default Book;
