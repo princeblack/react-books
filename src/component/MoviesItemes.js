@@ -5,7 +5,6 @@ const MoviesItemes = (props) => {
     window.open(url, "_blank");
   };
   const data = props.data
-  console.log(data);
   return (
     <div className="book">
       <div className="left">
